@@ -1,0 +1,499 @@
+from enum import Enum
+
+# Enum for Nationality
+class Nationality(Enum):
+    EMIRATI = "Emirati"
+    SAUDI = "Saudi"
+    INDIAN = "Indian"
+    OTHER = "Other"
+
+# Enum for Room Type
+class RoomType(Enum):
+    SINGLE = "Single"
+    DOUBLE = "Double"
+    SUITE = "Suite"
+
+# Enum for Bed Type
+class BedType(Enum):
+    SINGLE = "Single"
+    DOUBLE = "Double"
+    QUEEN = "Queen"
+    KING = "King"
+
+# Enum for Payment Method
+class PaymentMethod(Enum):
+    CREDIT = "Credit"
+    DEBIT = "Debit"
+    CASH = "Cash"
+
+# Enum for Currency
+class Currency(Enum):
+    AED = "AED"
+    USD = "USD"
+    EUR = "EUR"
+    OTHER = "Other"
+
+# Enum class for Payment Status
+class PaymentStatus(Enum):
+    PENDING = "Pending"
+    COMPLETED = "Completed"
+    FAILED = "Failed"
+    CANCELLED = "Cancelled"
+
+# Enum class for Transactions Status
+class TransactionsStatus(Enum):
+    CHECKEDIN = "Checked In"
+    CHECKEDOUT = "Checked Out"
+
+# Class Guest
+class Guest:
+    # Initialize attributes for the class Guest
+    def __init__(self, guest_id, first_name, last_name, date_of_birth, nationality, phone_number, email, address):
+        self.__guest_id = guest_id
+        self.__first_name = first_name
+        self.__last_name = last_name
+        self.__date_of_birth = date_of_birth
+        self.__nationality = nationality
+        self.__phone_number = phone_number
+        self.__email = email
+        self.__address = address
+
+    # Getter and Setter methods for Guest attributes
+    def setGuestID(self, guest_id):
+        self.__guest_id = guest_id
+    def getGuestID(self):
+        return self.__guest_id
+
+    def setFirstName(self, first_name):
+        self.__first_name = first_name
+    def getFirstName(self):
+        return self.__first_name
+
+    def setLastName(self, last_name):
+        self.__last_name = last_name
+    def getLastName(self):
+        return self.__last_name
+
+    def setDateOfBirth(self, date_of_birth):
+        self.__date_of_birth = date_of_birth
+    def getDateOfBirth(self):
+        return self.__date_of_birth
+
+    def setNationality(self, nationality):
+        self.__nationality = nationality
+    def getNationality(self):
+        return self.__nationality
+
+    def setPhoneNumber(self, phone_number):
+        self.__phone_number = phone_number
+    def getPhoneNumber(self):
+        return self.__phone_number
+
+    def setEmail(self, email):
+        self.__email = email
+    def getEmail(self):
+        return self.__email
+
+    def setAddress(self, address):
+        self.__address = address
+    def getAddress(self):
+        return self.__address
+
+    def roomInterest(self, room):
+        pass # This function would process the guest's interest in a particular room.
+
+    # Function to display guest information
+    def displayGuestInfo(self):
+        print("-=Guest Information=-")
+        print(f"Guest: {self.__first_name}, {self.__last_name}")
+        print(f"Date of Birth: {self.__date_of_birth}")
+        print(f"Nationality: {self.__nationality.value}")
+        print(f"Phone Number: {self.__phone_number}")
+        print(f"Email: {self.__email}")
+        print(f"Address: {self.__address}")
+
+# Class Hotel
+class Hotel:
+    # Initialize attributes for the class Hotel
+    def __init__(self, hotel_id, hotel_name, contact_number, location, available_rooms, rating):
+        self.__hotel_id = hotel_id
+        self.__hotel_name = hotel_name
+        self.__contact_number = contact_number
+        self.__location = location
+        self.__available_rooms = available_rooms
+        self.__rating = rating
+
+    # Getter and Setter methods for Hotel attributes
+    def setHotelID(self, hotel_id):
+        self.__hotel_id = hotel_id
+    def getHotelID(self):
+        return self.__hotel_id
+
+    def setHotelName(self, hotel_name):
+        self.__hotel_name = hotel_name
+    def getHotelName(self):
+        return self.__hotel_name
+
+    def setContactNumber(self, contact_number):
+        self.__contact_number = contact_number
+    def getContactNumber(self):
+        return self.__contact_number
+
+    def setLocation(self, location):
+        self.__location = location
+    def getLocation(self):
+        return self.__location
+
+    def setAvailableRooms(self, available_rooms):
+        self.__available_rooms = available_rooms
+    def getAvailableRooms(self):
+        return self.__available_rooms
+
+    def setRating(self, rating):
+        self.__rating = rating
+    def getRating(self):
+        return self.__rating
+
+    # Function to display hotel information
+    def displayHotelInfo(self):
+        print("-=Hotel Information=-")
+        print(f"Hotel ID: {self.__hotel_id}")
+        print(f"Hotel: {self.__hotel_name}")
+        print(f"Location: {self.__location}")
+        print(f"Contact: {self.__contact_number}")
+        print(f"Rating: {self.__rating}")
+
+# Class Login
+class Login:
+    # Initialize attributes for the class Login
+    def __init__(self, username, password, login_date, login_time, otp):
+        self.__username = username
+        self.__password = password
+        self.__login_date = login_date  # Corrected initialization of __login_date
+        self.__login_time = login_time
+        self.__otp = otp
+
+    # Getter and Setter methods for Login attributes
+    def setUsername(self, username):
+        self.__username = username
+    def getUsername(self):
+        return self.__username
+
+    def setPassword(self, password):
+        self.__password = password
+    def getPassword(self):
+        return self.__password
+
+    def setLoginDate(self, login_date):
+        self.__login_date = login_date
+    def getLoginDate(self):
+        return self.__login_date
+
+    def setLoginTime(self, login_time):
+        self.__login_time = login_time
+    def getLoginTime(self):
+        return self.__login_time
+
+    def setOTP(self, otp):
+        self.__otp = otp
+    def getOTP(self):
+        return self.__otp
+
+    def verifyLogin(self):
+        pass # This function would contain the logic for verifying user credentials.
+
+    # Function to display the login information
+    def displayLoginInfo(self):
+        print("-=Login Information=-")
+        print(f"Username: {self.__username}")
+        print(f"Password: {self.__password}")
+        print(f"Login Date and Time: {self.__login_date}, {self.__login_time}")
+        print(f"One Time Password (OTP): {self.__otp}")
+
+# Class Room
+class Room:
+    # Initialize attributes for the class Room
+    def __init__(self, room_number, room_type, bed_type, price_per_night, number_of_nights, floor_number, max_occupancy):
+        self.__room_number = room_number
+        self.__room_type = room_type
+        self.__bed_type = bed_type
+        self.__price_per_night = price_per_night
+        self.__number_of_nights = number_of_nights
+        self.__floor_number = floor_number
+        self.__max_occupancy = max_occupancy
+
+    # Getter and Setter methods for Room attributes
+    def setRoomNumber(self, room_number):
+        self.__room_number = room_number
+    def getRoomNumber(self):
+        return self.__room_number
+
+    def setRoomType(self, room_type):
+        self.__room_type = room_type
+    def getRoomType(self):
+        return self.__room_type
+
+    def setBedType(self, bed_type):
+        self.__bed_type = bed_type
+    def getBedType(self):
+        return self.__bed_type
+
+    def setPricePerNight(self, price_per_night):
+        self.__price_per_night = price_per_night
+    def getPricePerNight(self):
+        return self.__price_per_night
+
+    def setNumberOfNights(self, number_of_nights):
+        self.__number_of_nights = number_of_nights
+    def getNumberOfNights(self):
+        return self.__number_of_nights
+
+    def setFloorNumber(self, floor_number):
+        self.__floor_number = floor_number
+    def getFloorNumber(self):
+        return self.__floor_number
+
+    def setMaxOccupancy(self, max_occupancy):
+        self.__max_occupancy = max_occupancy
+    def getMaxOccupancy(self):
+        return self.__max_occupancy
+
+    def verifyAvailability(self):
+        pass # This function would check if the room is available for booking.
+
+    def bookRoom(self):
+        pass # This function would handle the room booking process.
+
+    # Function to display room information
+    def displayRoomInfo(self):
+        print("-=Room Information=-")
+        print(f"Room {self.__room_number}")
+        print(f"Type: {self.__room_type.value}")
+        print(f"Bed Type: {self.__bed_type.value}")
+        print(f"Price/Night: {self.__price_per_night} AED")
+        print(f"Nights: {self.__number_of_nights}")
+        print(f"Floor: {self.__floor_number}")
+        print(f"Occupancy: {self.__max_occupancy}")
+
+# Class Payment
+class Payment:
+    # Initialize attributes for the class Payment
+    def __init__(self, amount, currency, payment_method, payment_date, payment_time, payment_status):
+        self.__amount = amount
+        self.__currency = currency
+        self.__payment_method = payment_method
+        self.__payment_date = payment_date
+        self.__payment_time = payment_time
+        self.__payment_status = payment_status
+
+    # Getter and Setter methods methods for Payment attributes
+    def setAmount(self, amount):
+        self.__amount = amount
+    def getAmount(self):
+        return self.__amount
+
+    def setCurrency(self, currency):
+        self.__currency = currency
+    def getCurrency(self):
+        return self.__currency
+
+    def setPaymentMethod(self, payment_method):
+        self.__payment_method = payment_method
+    def getPaymentMethod(self):
+        return self.__payment_method
+
+    def setPaymentDate(self, payment_date):
+        self.__payment_date = payment_date
+    def getPaymentDate(self):
+        return self.__payment_date
+
+    def setPaymentTime(self, payment_time):
+        self.__payment_time = payment_time
+    def getPaymentTime(self):
+        return self.__payment_time
+
+    def setPaymentStatus(self, payment_status):
+        self.__payment_status = payment_status
+    def getPaymentStatus(self):
+        return self.__payment_status
+
+    def verifySufficientFunds(self):
+        pass # This function would check if there are sufficient funds to process the payment.
+
+    # Function to apply a discount to the payment amount
+    def applyDiscount(self, discount_percent):
+        discount_amount = (discount_percent / 100) * self.__amount  # Calculate the discount amount
+        self.__amount -= discount_amount  # Subtract the discount from the total amount
+        print(f"Discount of {discount_percent}% applied. New Amount: {self.__amount} {self.__currency.value}")
+
+    # Function to display payment information
+    def displayPaymentInfo(self):
+        print("-=Payment Information=-")
+        print(f"Amount: {self.__amount} {self.__currency.value}")
+        print(f"Payment Method: {self.__payment_method.value}")
+        print(f"Payment Date and Time: {self.__payment_date} {self.__payment_time}")
+        print(f"Payment Status: {self.__payment_status.value}")
+
+    # Class CheckIn
+class CheckIn:
+    # Initialize attributes for the class Check In
+    def __init__(self, checkin_id, checkin_date, checkin_time, transactions_status, number_of_adults, number_of_children):
+        self.__checkin_id = checkin_id
+        self.__checkin_date = checkin_date
+        self.__checkin_time = checkin_time
+        self.__transactions_status = transactions_status
+        self.__number_of_adults = number_of_adults
+        self.__number_of_children = number_of_children
+
+    # Getter and Setter methods for CheckIn attributes
+    def setCheckinID(self, checkin_id):
+        self.__checkin_id = checkin_id
+    def getCheckinID(self):
+        return self.__checkin_id
+
+    def setCheckinDate(self, checkin_date):
+        self.__checkin_date = checkin_date
+    def getCheckinDate(self):
+        return self.__checkin_date
+
+    def setCheckinTime(self, checkin_time):
+        self.__checkin_time = checkin_time
+    def getCheckinTime(self):
+        return self.__checkin_time
+
+    def setTransactionsStatus(self, transactions_status):
+        self.__transactions_status = transactions_status
+    def getTransactionsStatus(self):
+        return self.__transactions_status
+
+    def setNumberOfAdults(self, number_of_adults):
+        self.__number_of_adults = number_of_adults
+    def getNumberOfAdults(self):
+        return self.__number_of_adults
+
+    def setNumberOfChildren(self, number_of_children):
+        self.__number_of_children = number_of_children
+    def getNumberOfChildren(self):
+        return self.__number_of_children
+
+    def verifyGuestID(self):
+        pass # This function would verify the guest's identification (passport/EID) before checking in.
+
+    def checkIn(self):
+        pass # This function would check the guest in.
+
+    # Function to display check-in details
+    def displayCheckInDetails(self):
+        print("-=Check-In Details=-")
+        print(f"Check-In ID: {self.__checkin_id}")
+        print(f"Check-In Date and Time: {self.__checkin_date}, {self.__checkin_time}")
+        print(f"Transaction Status: {self.__transactions_status.value}")
+        print(f"Number of Adults: {self.__number_of_adults}")
+        print(f"Number of Children: {self.__number_of_children}")
+
+# Class CheckOut
+class CheckOut:
+    # Initialize attributes for the class Check Out
+    def __init__(self, checkout_id, checkout_date, checkout_time, transactions_status, total_charges):
+        self.__checkout_id = checkout_id
+        self.__checkout_date = checkout_date
+        self.__checkout_time = checkout_time
+        self.__transactions_status = transactions_status
+        self.__total_charges = total_charges
+
+    # Getter and Setter methods for CheckOut attributes
+    def setCheckoutID(self, checkout_id):
+        self.__checkout_id = checkout_id
+    def getCheckoutID(self):
+        return self.__checkout_id
+
+    def setCheckoutDate(self, checkout_date):
+        self.__checkout_date = checkout_date
+    def getCheckoutDate(self):
+        return self.__checkout_date
+
+    def setCheckoutTime(self, checkout_time):
+        self.__checkout_time = checkout_time
+    def getCheckoutTime(self):
+        return self.__checkout_time
+
+    def setTotalCgharges(self, total_charges):
+        self.__total_charges = total_charges
+    def getTotalCharges(self):
+        return self.__total_charges
+
+    def checkOut(self):
+        pass # This function would check the guest out.
+
+    # Function to display check-out details
+    def displayCheckOutDetails(self):
+        print("-=Check-Out Details=-")
+        print(f"Check-Out ID: {self.__checkout_id}")
+        print(f"Check-Out Date and Time: {self.__checkout_date}, {self.__checkout_time}")
+        print(f"Transaction Status: {self.__transactions_status.value}")
+        print(f"Total Charges: {self.__total_charges} AED")
+
+# Creating 2 objects for each class
+guest1 = Guest("G101", "Abdulla", "Alremeithi", "2001-09-25", Nationality.EMIRATI, "+971 50 570 3003", "abdulla@hotmail.com", "Bain Al Jessrain, Abu Dhabi, United Arab Emirates")
+guest2 = Guest("G102", "Sunitha", "Kannenchery", "1960", Nationality.INDIAN, "+91 12 3456 7890", "sunitha@yahoo.com", "Kozhikode, Kerala, India")
+
+hotel1 = Hotel("H201", "Rotana Park Complex", "+971 2 657 333", "Abu Dhabi", 50, 4.6)
+hotel2 = Hotel("H202", "Holiday Inn", "+971 4 323 4333", "Dubai", 70, 4.4)
+
+login1 = Login("aremthi", "password123", "2024-09-29", "12:00", "1234")
+login2 = Login("skannenchery", "password456", "2024-09-30", "14:00", "5678")
+
+room1 = Room("R803", RoomType.SINGLE, BedType.KING, 369, 5, 8, 2)
+room2 = Room("R415", RoomType.SUITE, BedType.QUEEN, 555, 2, 4, 4)
+
+payment1 = Payment(1845, Currency.AED, PaymentMethod.CREDIT, "2024-09-29", "16:00", PaymentStatus.COMPLETED)
+payment2 = Payment(302, Currency.USD, PaymentMethod.DEBIT, "2024-09-28", "18:00", PaymentStatus.PENDING)
+
+checkin1 = CheckIn("C401", "2024-09-29", "15:00", TransactionsStatus.CHECKEDIN, 2, 0)
+checkin2 = CheckIn("C402", "2024-09-30", "14:00", TransactionsStatus.CHECKEDIN, 2, 2)
+
+checkout1 = CheckOut("CO501", "2024-10-04", "12:00", TransactionsStatus.CHECKEDOUT, 1500)
+checkout2 = CheckOut("CO502", "2024-10-02", "11:00", TransactionsStatus.CHECKEDOUT, 100)
+
+# Displaying details of the created objects
+print("---Object 1---")
+print(" ")
+guest1.displayGuestInfo()
+print(" ")
+hotel1.displayHotelInfo()
+print(" ")
+login1.displayLoginInfo()
+print(" ")
+room1.displayRoomInfo()
+print(" ")
+payment1.displayPaymentInfo()
+print(" ")
+checkin1.displayCheckInDetails()
+print(" ")
+checkout1.displayCheckOutDetails()
+print(" ")
+# Applying 10% discount to guest 1
+payment1.applyDiscount(10)  # Applying a 10% discount
+print(" ")
+payment1.displayPaymentInfo()
+print(" ")
+print("---Object 2---")
+print(" ")
+guest2.displayGuestInfo()
+print(" ")
+hotel2.displayHotelInfo()
+print(" ")
+login2.displayLoginInfo()
+print(" ")
+room2.displayRoomInfo()
+print(" ")
+payment2.displayPaymentInfo()
+print(" ")
+checkin2.displayCheckInDetails()
+print(" ")
+checkout2.displayCheckOutDetails()
+print(" ")
+# Applying 20% discount to guest 2
+payment2.applyDiscount(20)  # Applying a 10% discount
+print(" ")
+payment2.displayPaymentInfo()
